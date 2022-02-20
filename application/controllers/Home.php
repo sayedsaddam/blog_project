@@ -19,19 +19,19 @@ class Home extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index(){
-		$data['title'] = 'Home &raquo; TheWatchFactory';
+		$data['title'] = 'Home &raquo; AgroLabs';
 		$data['body'] = 'home';
 		$this->load->view('components/template', $data);
 	}
 	// blog page
 	public function blog(){
-		$data['title'] = 'Blog &raquo; TheWatchFactory';
+		$data['title'] = 'Blog &raquo; AgroLabs';
 		$data['body'] = 'blog';
 		$this->load->view('components/template', $data);
 	}
 	// about page
 	public function about(){
-		$data['title'] = 'About &raquo; TheWatchFactory';
+		$data['title'] = 'About &raquo; AgroLabs';
 		$data['body'] = 'about';
 		$this->load->view('components/template', $data);
 	}
