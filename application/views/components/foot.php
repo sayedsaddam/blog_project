@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-12 text-right">
 			<hr>
-			<small>&copy; <?php echo date('Y'); ?> - <?php echo 'TheWatchFactory'; ?></small>
+			<small>&copy; <?php echo date('Y'); ?> - <?php echo 'AgroLabs'; ?></small>
 		</div>
 	</div>
 </div>

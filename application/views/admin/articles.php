@@ -1,4 +1,13 @@
 <div class="container">
+	<div class="row mb-4">
+		<div class="col-md-6">
+			<h1 class="font-weight-light">Articles List</h1>
+		</div>
+		<div class="col-md-6 text-right">
+			<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-primary">Add Article</a>
+			<a href="<?= base_url('admin'); ?>" class="btn btn-outline-primary">Dashboard</a>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table table-condensed table-hover table-sm">
