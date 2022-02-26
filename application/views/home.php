@@ -2,7 +2,7 @@
 	<!-- heading... -->
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="display-3 font-weight-bold">Top products</h1>
+			<h1 class="display-3 font-weight-bold">Top Rated</h1>
 		</div>
 	</div>
 	<!-- Top products section -->
@@ -68,7 +68,7 @@
 	</div>
 	<div class="row mt-4 mb-3">
 		<div class="col-md-12">
-			<h1 class="font-weight-bold">Top Rated</h1>
+			<h1 class="font-weight-bold">Best Selling</h1>
 		</div>
 	</div>
 </div>
