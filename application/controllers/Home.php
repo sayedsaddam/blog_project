@@ -35,4 +35,10 @@ class Home extends CI_Controller {
 		$data['body'] = 'about';
 		$this->load->view('components/template', $data);
 	}
+	// view product page
+	public function product_detail(){ // product id will be passed as parameter
+		$data['title'] = 'Product Detail &raquo; AgroLabs';
+		$data['body'] = 'product_detail';
+		$this->load->view('components/template', $data);
+	}
 }
