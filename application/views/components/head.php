@@ -36,7 +36,7 @@
 					<a class="nav-link" href="" title="Create an account if you don't have one?">Register</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="" title="Login to publish a story...">Login</a>
+					<a class="nav-link" href="<?= base_url('login'); ?>" title="Login to publish a story...">Login</a>
 				</li>
 			</ul>
 		</div>
