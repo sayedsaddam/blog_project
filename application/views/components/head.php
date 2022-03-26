@@ -11,7 +11,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-		<a class="navbar-brand" href="<?= base_url(); ?>" title="Agro Labs - Government of Khyber Pakhtunkhwa">AgroLabs</a>
+		<a class="navbar-brand" href="<?= base_url(); ?>" title="Agro Labs - Government of Khyber Pakhtunkhwa">WatchZone</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>

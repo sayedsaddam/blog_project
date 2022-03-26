@@ -22,7 +22,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 text-right">
-				<p class="font-weight-light">&copy; Copyright <?= date('Y'); ?> AgroLabs</p>
+				<small class="">&copy; Copyright <?= date('Y'); ?> WatchZone. All rights reserved. Yes, all of them.</small>
 			</div>
 		</div>
 	</div>

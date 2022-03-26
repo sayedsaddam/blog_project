@@ -1,17 +1,23 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="font-weight-light">About us &raquo; our staff</h1>
+			<h1 class="font-weight-light">About us &raquo; The Company</h1>
 		</div>
 	</div>
 	<div class="row mt-5">
-		<?php for($i = 1; $i < 10; $i++): ?>
-			<div class="col-md-4 mb-4 font-weight-light">
-				<img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17f13ad2547%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17f13ad2547%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.19140625%22%20y%3D%2296.6%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="profile image" class="img-fluid">
-				<h3 class="font-weight-light mt-2">Shah Khalid (PhD)</h3>
-				<p>Research Officer, AgroLabs, CCRI, Peshawar - Pakistan.</p>
-				<a href="" title="Read more for biography and research papers links...">read more</a>
-			</div>
-		<?php endfor; ?>
+		<div class="col-md-8">
+			<p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum temporibus accusamus, voluptas, eaque molestiae minima a maiores quas impedit omnis eligendi blanditiis dicta itaque enim vero quo? Doloribus, dolor totam?</p>
+
+			<p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, rem? Distinctio fugit nobis ipsa quibusdam a ea? Ea, odit! Enim laboriosam numquam aspernatur, sapiente omnis perferendis ipsa incidunt tenetur inventore!</p>
+
+			<p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus similique exercitationem ea molestias, iure unde! Aspernatur minus temporibus officiis sequi, officia aliquid cumque nisi deleniti dicta! Nam libero optio temporibus.</p>
+
+			<p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur magnam ut tenetur, minima nulla aspernatur saepe unde sapiente at quia vero incidunt, suscipit fugit recusandae nihil. Ratione veniam error assumenda.</p>
+		</div>
+		<div class="col-md-4">
+			<a href="<?= base_url('home/product_detail/'); ?>">
+				<img src="<?= base_url('assets/images/header.webp'); ?>" alt="product-image" class="img-fluid">
+			</a>
+		</div>
 	</div>
 </div>

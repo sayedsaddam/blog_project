@@ -10,25 +10,35 @@
 		<div class="col-md-6 mb-2">
 			<div class="row">
 				<div class="col-md-12">
-					<img src="https://images.unsplash.com/photo-1645882945476-427ba383fde3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80" alt="" class="img-fluid">
+					<a href="<?= base_url('home/product_detail/'); ?>">
+						<img src="<?= base_url('assets/images/header.webp'); ?>" alt="product image" class="img-fluid" title="image name...">
+					</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6 mb-2">
 			<div class="row mb-3">
 				<div class="col-md-6 mb-2">
-					<img src="https://images.unsplash.com/photo-1645830237228-c64994eccce1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="img-fluid">
+					<a href="<?= base_url('home/product_detail/') ?>">
+						<img src="<?= base_url('assets/images/head-1.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
+					</a>
 				</div>
 				<div class="col-md-6">
-					<img src="https://images.unsplash.com/photo-1645871306587-bebaa2f1dfc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="img-fluid">
+					<a href="<?= base_url('home/product_detail/') ?>">
+						<img src="<?= base_url('assets/images/head-2.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
+					</a>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 mb-2">
-					<img src="https://images.unsplash.com/photo-1638913976954-8f7b612867c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="img-fluid">
+					<a href="<?= base_url('home/product_detail/') ?>">
+						<img src="<?= base_url('assets/images/head-3.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
+					</a>
 				</div>
 				<div class="col-md-6">
-					<img src="https://images.unsplash.com/photo-1645821522744-d8793911bc62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="img-fluid">
+					<a href="<?= base_url('home/product_detail/') ?>">
+						<img src="<?= base_url('assets/images/head-4.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
+					</a>
 				</div>
 			</div>
 		</div>
