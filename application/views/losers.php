@@ -2,12 +2,12 @@
 	<div class="row">
 		<div class="col-md-5">
 			<h1 class="display-4 font-weight-bold">Loser of the Day</h1>
-			<img src="<?= base_url('assets/images/header.webp'); ?>" class="img-responsive img-fluid mb-3" alt="loser-of-the-day">
+			<img src="<?= base_url('assets/images/loser-ss.jpeg'); ?>" class="img-responsive img-fluid mb-3" alt="loser-of-the-day">
 			<h2 class="text-secondary mb-0">Mr. Shehbaz Sharif, Lahore-PK</h2>
 			<h4 class="font-weight-light text-secondary">Political idiot of Pakistan</h4>
 		</div>
 		<div class="col-md-7">
-			<h1 class="display-4 font-weight-bold">Read the full story</h1>
+			<h1 class="display-4 font-weight-bold">Full story</h1>
 			<h2>History</h2>
 			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae amet nostrum sequi reprehenderit dolore quisquam blanditiis natus dignissimos veritatis animi porro, fugiat hic molestiae explicabo illum deserunt ea nesciunt ducimus!</p>
 
