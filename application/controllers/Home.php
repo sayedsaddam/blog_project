@@ -41,4 +41,10 @@ class Home extends CI_Controller {
 		$data['body'] = 'product_detail';
 		$this->load->view('components/template', $data);
 	}
+	// categories > loser.com
+	public function losers(){
+		$data['title'] = 'Losers &raquo; WatchZone';
+		$data['body'] = 'losers';
+		$this->load->view('components/template', $data);
+	}
 }

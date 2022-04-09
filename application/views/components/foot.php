@@ -1,17 +1,25 @@
-<div class="jumbotron bg-dark text-light mb-0 mt-5">
+<div class="jumbotron bg-dark text-light mb-0 mt-5 rounded-0">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
 				<h5>About</h5>
 				<p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quo ipsa officiis laudantium porro assumenda accusamus reiciendis, omnis laboriosam consequatur sed sint, hic laborum beatae, expedita esse unde. Omnis, porro!</p>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-2 font-weight-light">
 				<h5>Quick Links</h5>
-				<li class="mb-0 font-weight-light"><a class="text-light" href="#">Home</a></li>
-				<li class="mb-0 font-weight-light"><a class="text-light" href="#">About</a></li>
-				<li class="mb-0 font-weight-light"><a class="text-light" href="#">Contact</a></li>
-				<li class="mb-0 font-weight-light"><a class="text-light" href="#">Careers</a></li>
-				<li class="mb-0 font-weight-light"><a class="text-light" href="#">Blog</a></li>
+				<li class="mb-0"><a class="text-light" href="#">Home</a></li>
+				<li class="mb-0"><a class="text-light" href="#">About</a></li>
+				<li class="mb-0"><a class="text-light" href="#">Contact</a></li>
+				<li class="mb-0"><a class="text-light" href="#">Careers</a></li>
+				<li class="mb-0"><a class="text-light" href="#">Blog</a></li>
+			</div>
+			<div class="col-md-2 font-weight-light">
+				<h5>Politics</h5>
+				<li>Losers</li>
+				<li>Pol. Idiots</li>
+				<li>Demo-crazy</li>
+				<li>Horse Trading</li>
+				<li>Conspiracies</li>
 			</div>
 			<div class="col-md-4">
 				<h5>Find Us <small class="font-weight-light">All over the place</small></h5>
