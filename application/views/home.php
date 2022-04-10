@@ -29,7 +29,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row pt-1">
 				<div class="col-md-6 mb-2">
 					<a href="<?= base_url('home/product_detail/') ?>">
 						<img src="<?= base_url('assets/images/head-3.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
