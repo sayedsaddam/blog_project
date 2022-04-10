@@ -19,6 +19,12 @@
 
 			<h2>After joining Politics</h2>
 			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio libero facere, est sequi sint recusandae tempore quidem aliquam animi nisi nulla voluptatum consequuntur, assumenda accusamus voluptates repudiandae deserunt at aut?</p>
+
+			<h2>How did he become a PM?</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam officia praesentium nulla delectus accusantium incidunt, earum facilis officiis iusto sed, optio nostrum laudantium, aliquam ipsum modi labore. Sunt, officiis aliquid!</p>
+
+			<h2>The Illegal and disgraced PM ever</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nobis harum nulla saepe labore deserunt obcaecati nisi! Ipsam, dolore nisi eum quod consequuntur molestiae et suscipit nihil asperiores eos eligendi.</p>
 		</div>
 	</div>
 </div>
