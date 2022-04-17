@@ -23,6 +23,9 @@
 						<a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('products'); ?>">Products</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="<?= base_url('about'); ?>">About</a>
 					</li>
 					<li class="nav-item">
