@@ -11,34 +11,37 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-		<a class="navbar-brand" href="<?= base_url(); ?>" title="Agro Labs - Government of Khyber Pakhtunkhwa">WatchZone</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+		<div class="container">
+			<a class="navbar-brand" href="<?= base_url(); ?>" title="Agro Labs - Government of Khyber Pakhtunkhwa">WatchZone</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
-					<a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('about'); ?>">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('blog'); ?>">Articles</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link text-danger font-weight-bold" href="<?= base_url('losers'); ?>">Losers</a>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="" title="Create an account if you don't have one?">Register</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('login'); ?>" title="Login to publish a story...">Login</a>
-				</li>
-			</ul>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('about'); ?>">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('blog'); ?>">Articles</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-danger font-weight-bold" href="<?= base_url('losers'); ?>">Losers</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="" title="Create an account if you don't have one?">Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('login'); ?>" title="Login to publish a story...">Login</a>
+					</li>
+				</ul>
+			</div>
 		</div>
+		
 	</nav>
 	
