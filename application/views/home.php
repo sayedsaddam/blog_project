@@ -18,24 +18,24 @@
 		</div>
 		<div class="col-md-6 mb-2">
 			<div class="row mb-3">
-				<div class="col-md-6 mb-2">
+				<div class="col-6 mb-2">
 					<a href="<?= base_url('home/product_detail/') ?>">
 						<img src="<?= base_url('assets/images/head-1.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
 					</a>
 				</div>
-				<div class="col-md-6">
+				<div class="col-6">
 					<a href="<?= base_url('home/product_detail/') ?>">
 						<img src="<?= base_url('assets/images/head-2.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
 					</a>
 				</div>
 			</div>
 			<div class="row pt-1">
-				<div class="col-md-6 mb-2">
+				<div class="col-6 mb-2">
 					<a href="<?= base_url('home/product_detail/') ?>">
 						<img src="<?= base_url('assets/images/head-3.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
 					</a>
 				</div>
-				<div class="col-md-6">
+				<div class="col-6">
 					<a href="<?= base_url('home/product_detail/') ?>">
 						<img src="<?= base_url('assets/images/head-4.jpeg'); ?>" alt="product image" class="img-fluid" title="image name...">
 					</a>
