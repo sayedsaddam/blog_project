@@ -73,7 +73,7 @@
 	</div>
 	<div class="row mb-4">
 		<div class="col-md-12 text-right">
-			<a href="#" class="btn btn-primary rounded-0">View More &raquo;</a>
+			<a href="<?= base_url('products'); ?>" class="btn btn-primary rounded-0">View More &raquo;</a>
 		</div>
 	</div>
 	<div class="row mt-4 mb-3">
@@ -88,7 +88,7 @@
 								<h5 class="card-title mt-3 mb-0">G-Shock, 29029432 - <span class="text-secondary">$100</span></h5>
 								<p class="font-weight-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum mollitia distinctio fuga ut repudiandae sit unde nulla earum doloribus dolor repellat explicabo deleniti id facilis similique animi, quidem culpa cum.</p>
 								<a href="<?= base_url('home/product_detail/'); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a>
-								<a href="" class="btn btn-light btn-sm mb-2 rounded-0">More Info</a>
+								<a href="<?= base_url('home/product_detail'); ?>" class="btn btn-outline-info btn-sm mb-2 rounded-0">More info &raquo;</a>
 								<br>
 								<?php for($k = 1; $k <= 5; $k++): ?>
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16">

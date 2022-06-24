@@ -8,6 +8,6 @@ class Login extends CI_Controller{
 		parent::__construct();
 	}
 	public function index(){
-      echo 'Login to access the dashboard!';
-    }
+      $this->load->view('login');
+   }
 }
