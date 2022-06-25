@@ -4,7 +4,7 @@ class Migration_Create_blog_table extends CI_Migration{
 		$this->dbforge->add_field(array(
 			'id' => array(
 				'type' => 'INT',
-				'constraint' => 5,
+				'constraint' => 11,
 				'unsigned' => TRUE,
 				'auto_increment' => TRUE
 			),
@@ -16,12 +16,17 @@ class Migration_Create_blog_table extends CI_Migration{
 				'type' => 'TEXT',
 				'null' => TRUE
 			),
-			'created_at datetime default current_timestamp',
-			'updated_at datetime default current_timestamp',
+			'added_by' => array(
+				'type' => 'INT',
+				'constraint' => 11,
+				'unsigned' => TRUE
+			),
 			'status' => array(
 				'type' => 'tinyint',
-				'constraint' => '1'
-			)
+				'constraint' => 1
+			),
+			'created_at datetime default current_timestamp',
+			'updated_at datetime default current_timestamp',
 		));
 		$this->dbforge->add_key('id', TRUE);
 		$this->dbforge->create_table('blog');
