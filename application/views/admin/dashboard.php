@@ -12,7 +12,7 @@
 					<h4 class="font-weight-light">Articles Published</h4>
 				</div>
 				<div class="col-md-6">
-					<h4 class="font-weight-light">9</h4>
+					<h4 class="font-weight-light"><?= $articles; ?></h4>
 				</div>
 			</div>
 			<div class="row mt-4">

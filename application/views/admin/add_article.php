@@ -1,6 +1,14 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
+			<h1 class="font-weight-light">Add Article &raquo; <a href="javascript:history.go(-1)" class="btn btn-outline-primary">Dashboard</a></h1>
+		</div>
+		<div class="col-md-4">
+			<h1 class="font-weight-light">Recently Published</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
 			<form action="<?= base_url('admin/publish_article'); ?>" method="post">
 				<div class="form-group">
 					<label for="title">Article Title</label>
@@ -17,16 +25,13 @@
 			</form>
 		</div>
 		<div class="col-md-4">
-			<h1 class="font-weight-light">Recently published</h1>
-			<h3 class="font-weight-light">Blog title 1</h3>
-			<p>Posted by: <a href="">Admin</a> on <?= date('l, M jS, Y'); ?></p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, explicabo ratione corporis, eaque adipisci eveniet, corrupti in quaerat esse nam debitis odit dolore. Molestiae aliquam doloribus officia a aliquid ipsam...</p>
-			<a href="">read the article</a>
-			<hr>
-			<h3 class="font-weight-light">Blog title 2</h3>
-			<p>Posted by: <a href="">Khalid</a> on <?= date('l, M jS, Y'); ?></p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, explicabo ratione corporis, eaque adipisci eveniet, corrupti in quaerat esse nam debitis odit dolore. Molestiae aliquam doloribus officia a aliquid ipsam...</p>
-			<a href="">read the article</a>
+			<?php if(!empty($articles)): foreach($articles as $data): ?>
+				<h3 class="font-weight-light"><?= $data->title; ?></h3>
+				<p>Posted by: <a href=""><?= $data->fullname; ?></a> on <?= date('D, M jS, Y', strtotime($data->created_at)); ?></p>
+				<p><?= substr($data->blog_description, 0, 100).' ...'; ?></p>
+				<a href="<?= base_url('admin/article/'.$data->slug); ?>">read the article</a>
+				<hr>
+			<?php endforeach; else: echo 'No articles published yet!'; endif; ?>
 		</div>
 	</div>
 </div>

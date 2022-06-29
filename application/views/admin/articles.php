@@ -11,6 +11,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table table-condensed table-hover table-sm">
+				<caption>Total Number of Articles published, <?= count($articles); ?></caption>
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -21,16 +22,18 @@
 					</tr>
 				</thead>
 				<tbody>
+					<?php if(!empty($articles)): foreach($articles as $data): ?>
 					<tr>
-						<td>1</td>
-						<td>Test Article</td>
-						<td>test-article</td>
-						<td>Admin</td>
+						<td><?= $data->id; ?></td>
+						<td><?= $data->title; ?></td>
+						<td><?= $data->slug; ?></td>
+						<td><?= $data->fullname; ?></td>
 						<td>
-							<a href="" class="btn btn-primary btn-sm">edit</a>
-							<a href="" class="btn btn-danger btn-sm">delete</a>
+							<a href="<?= base_url('admin/edit_article/'.$data->id); ?>" class="btn btn-primary btn-sm">edit</a>
+							<a href="<?= base_url('admin/delete_article/'.$data->id); ?>" class="btn btn-danger btn-sm">delete</a>
 						</td>
 					</tr>
+					<?php endforeach; else: echo '<tr class="table-danger"><td colspan="5" align="center">No articles found.</td></tr>'; endif; ?>
 				</tbody>
 			</table>
 		</div>

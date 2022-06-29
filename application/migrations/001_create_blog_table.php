@@ -12,6 +12,10 @@ class Migration_Create_blog_table extends CI_Migration{
 				'type' => 'VARCHAR',
 				'constraint' => 100
 			),
+			'slug' => array(
+				'type' => 'VARCHAR',
+				'constraint' => 100
+			),
 			'blog_description' => array(
 				'type' => 'TEXT',
 				'null' => TRUE
@@ -24,6 +28,10 @@ class Migration_Create_blog_table extends CI_Migration{
 			'status' => array(
 				'type' => 'tinyint',
 				'constraint' => 1
+			),
+			'published_from' => array( // IP address
+				'type' => 'VARCHAR',
+				'constraint' => 100
 			),
 			'created_at datetime default current_timestamp',
 			'updated_at datetime default current_timestamp',
