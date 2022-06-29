@@ -19,7 +19,7 @@
 						<p class="text-center">You are not authorized to access this page at the moment. <br>Try logging in to add or edit products.</p>
 						<div class="row">
 							<div class="col-md-6 offset-md-3 text-center">
-								<form action="<?= base_url('login'); ?>" method="post">
+								<form action="<?= base_url('login/signin'); ?>" method="post">
 									<div class="form-group">
 										<input type="text" name="username" id="username" class="form-control" placeholder="Username">
 									</div>
@@ -30,6 +30,9 @@
 										<button type="submit" class="btn btn-primary btn-block">Login</button>
 									</div>
 								</form>
+								<?php if($failed = $this->session->flashdata('failed')): ?>
+									<div class="alert alert-danger"><?= $failed; ?></div>
+								<?php endif; ?>
 								<small class="text-center">Copyright &copy; <a href="<?= base_url(); ?>" class="text-primary">WatchZone</a> All rights reserved. Yes, all of them.</small>
 							</div>
 						</div>
