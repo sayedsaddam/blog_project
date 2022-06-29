@@ -40,7 +40,11 @@
 						<a class="nav-link" href="" title="Create an account if you don't have one?">Register</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('login'); ?>" title="Login to publish a story...">Login</a>
+						<?php if($this->session->userdata('username')): ?>
+							<a class="nav-link" href="<?= base_url('login/signout'); ?>" title="Login to publish a story...">Logout</a>
+						<?php else: ?>
+							<a class="nav-link" href="<?= base_url('login'); ?>" title="Terminate session and logout...">Login</a>
+						<?php endif; ?>
 					</li>
 				</ul>
 			</div>
