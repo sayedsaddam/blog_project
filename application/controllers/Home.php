@@ -2,7 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
-
+	public function __construct(){
+		parent::__construct();
+		$this->load->model(array('admin_model'));
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -24,9 +27,20 @@ class Home extends CI_Controller {
 		$this->load->view('components/template', $data);
 	}
 	// blog page
-	public function blog(){
+	public function blog($offset = null){
+		$limit = 10;
 		$data['title'] = 'Blog &raquo; WatchZone';
 		$data['body'] = 'blog';
+		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
+		$this->load->view('components/template', $data);
+	}
+	// blog details page
+	public function blog_detail($slug, $offset = null){
+		$limit = 3;
+		$data['title'] = 'Blog Details &raquo; WatchZone';
+		$data['body'] = 'blog_detail';
+		$data['article'] = $this->admin_model->get_article($slug);
+		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
 	// about page

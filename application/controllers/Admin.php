@@ -54,7 +54,7 @@ class Admin extends CI_Controller{
 	}
 	// get article
 	public function article($slug){
-		$data['title'] = 'Article &raquo; AgroLabs';
+		$data['title'] = 'Article &raquo; WatchZone';
 		$data['body'] = 'admin/article';
 		$data['article'] = $this->admin_model->get_article($slug);
 		echo '<pre>'; print_r($data['article']); exit;
