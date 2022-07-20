@@ -11,7 +11,7 @@ class Admin extends CI_Controller{
 	public function index($offset = null){
 		$limit = 1000000;
 		// echo $this->input->ip_address();
-		$data['title'] = 'Dashboard &raquo; AgroLabs';
+		$data['title'] = 'Dashboard &raquo; WatchZone';
 		$data['body'] = 'admin/dashboard';
 		$data['articles'] = count($this->admin_model->list_articles($limit, $offset));
 		$this->load->view('components/template', $data);
@@ -19,7 +19,7 @@ class Admin extends CI_Controller{
 	// list articles
 	public function articles($offset = null){
 		$limit = 10;
-		$data['title'] = 'Articles &raquo; AgroLabs';
+		$data['title'] = 'Articles &raquo; WatchZone';
 		$data['body'] = 'admin/articles';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
@@ -27,7 +27,7 @@ class Admin extends CI_Controller{
 	// add article
 	public function add_article($offset = null){
 		$limit = 2;
-		$data['title'] = 'Add Article &raquo; AgroLabs';
+		$data['title'] = 'Add Article &raquo; WatchZone';
 		$data['body'] = 'admin/add_article';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
@@ -52,12 +52,13 @@ class Admin extends CI_Controller{
 			redirect('admin/add_article');
 		}
 	}
-	// get article
-	public function article($slug){
+	// get article for edit
+	public function article($slug, $offset = null){
+		$limit = 2;
 		$data['title'] = 'Article &raquo; WatchZone';
-		$data['body'] = 'admin/article';
-		$data['article'] = $this->admin_model->get_article($slug);
-		echo '<pre>'; print_r($data['article']); exit;
+		$data['body'] = 'admin/add_article';
+		$data['article'] = $this->admin_model->get_article($slug); // edit article
+		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
 }

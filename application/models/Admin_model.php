@@ -19,6 +19,7 @@ class Admin_model extends CI_Model{
 									blog.slug,
 									blog.blog_description,
 									blog.status,
+									blog.added_by,
 									blog.created_at,
 									blog.updated_at,
 									users.fullname');
@@ -35,6 +36,7 @@ class Admin_model extends CI_Model{
 									blog.slug,
 									blog.blog_description,
 									blog.status,
+									blog.added_by,
 									blog.created_at,
 									blog.updated_at,
 									users.fullname');

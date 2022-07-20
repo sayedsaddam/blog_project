@@ -29,8 +29,8 @@
 						<td><?= $data->slug; ?></td>
 						<td><?= $data->fullname; ?></td>
 						<td>
-							<a href="<?= base_url('admin/edit_article/'.$data->id); ?>" class="btn btn-primary btn-sm">edit</a>
-							<a href="<?= base_url('admin/delete_article/'.$data->id); ?>" class="btn btn-danger btn-sm">delete</a>
+							<a href="<?= base_url('admin/article/'.$data->slug); ?>" class="btn btn-primary btn-sm">edit</a>
+							<a href="<?= base_url('admin/delete_article/'.$data->slug); ?>" class="btn btn-danger btn-sm">delete</a>
 						</td>
 					</tr>
 					<?php endforeach; else: echo '<tr class="table-danger"><td colspan="5" align="center">No articles found.</td></tr>'; endif; ?>
