@@ -29,7 +29,7 @@ class Admin_model extends CI_Model{
 		$this->db->limit($limit, $offset);
 		return $this->db->get()->result();
 	}
-	// get article
+	// get article by slug
 	public function get_article($slug){
 		$this->db->select('blog.id,
 									blog.title,
@@ -44,5 +44,11 @@ class Admin_model extends CI_Model{
 		$this->db->join('users', 'blog.added_by = users.id', 'left');
 		$this->db->where('blog.slug', $slug);
 		return $this->db->get()->row();
+	}
+	// updated article by id
+	public function update_article($id, $data){
+		$this->db->where('id', $id);
+		$this->db->update('blog', $data);
+		return true;
 	}
 }

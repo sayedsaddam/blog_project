@@ -9,7 +9,8 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8">
-			<form action="<?= base_url('admin/publish_article'); ?>" method="post">
+			<form action="<?= empty($article) ? base_url('admin/publish_article') : base_url('admin/update_article'); ?>" method="post">
+				<input type="hidden" name="blog_id" value="<?= !empty($article) ? $article->id : ''; ?>">
 				<div class="form-group">
 					<label for="title">Article Title</label>
 					<input type="text" name="title" class="form-control" placeholder="Article title..." value="<?= !empty($article) ? $article->title : ''; ?>">

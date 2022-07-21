@@ -36,7 +36,7 @@ class Admin extends CI_Controller{
 	public function publish_article(){
 		$title = $this->input->post('title');
 		$slug = url_title($title, 'dash', TRUE);
-		$content = $this->input->post('content');
+		$content = trim($this->input->post('content'));
 		$data = array(
 			'title' => $title,
 			'slug' => $slug,
@@ -60,5 +60,26 @@ class Admin extends CI_Controller{
 		$data['article'] = $this->admin_model->get_article($slug); // edit article
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
+	}
+	// update article (edit)
+	public function update_article(){
+		$id = $this->input->post('blog_id');
+		$title = $this->input->post('title');
+		$slug = url_title($title, 'dash', TRUE);
+		$content = trim($this->input->post('content'));
+		$data = array(
+			'title' => $title,
+			'slug' => $slug,
+			'blog_description' => $content,
+			'added_by' => $this->session->userdata('id'),
+			'published_from' => $this->input->ip_address(),
+		);
+		if($this->admin_model->update_article($id, $data)){
+			$this->session->set_flashdata('success', '<strong>Success!</strong> Article has been updated successfully!');
+			redirect('admin/articles');
+		}else{
+			$this->session->set_flashdata('failed', '<strong>Failed!</strong> Something went wrong, please try again!');
+			redirect('admin/article/'.$slug);
+		}
 	}
 }
