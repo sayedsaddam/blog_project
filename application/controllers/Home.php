@@ -34,6 +34,14 @@ class Home extends CI_Controller {
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
+	// search articles
+	public function search_blog(){
+		$search = $this->input->get('search');
+		$data['title'] = 'Search Results &raquo; WatchZone';
+		$data['body'] = 'blog';
+		$data['results'] = $this->admin_model->search_articles($search);
+		$this->load->view('components/template', $data);
+	}
 	// blog details page
 	public function blog_detail($slug, $offset = null){
 		$limit = 3;
