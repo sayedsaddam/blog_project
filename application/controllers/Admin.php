@@ -82,4 +82,14 @@ class Admin extends CI_Controller{
 			redirect('admin/article/'.$slug);
 		}
 	}
+	// update article status > published/unpublished
+	public function delete_article($id){
+		if($this->admin_model->delete_article($id)){
+			// $this->session->set_flashdata('success', '<strong>Success!</strong> Article has been deleted successfully!');
+			redirect('admin/articles');
+		}else{
+			// $this->session->set_flashdata('failed', '<strong>Failed!</strong> Something went wrong, please try again!');
+			redirect('admin/articles');
+		}
+	}
 }

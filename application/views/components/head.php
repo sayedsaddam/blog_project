@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 	<script src="<?= base_url('assets/js/jquery.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
+	<!-- Sweet alert -->
+	<script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script> <!-- Javascript -->
+   <link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" /> <!-- CSS -->
 	<title><?= $title; ?></title>
 </head>
 <body>

@@ -45,10 +45,19 @@ class Admin_model extends CI_Model{
 		$this->db->where('blog.slug', $slug);
 		return $this->db->get()->row();
 	}
-	// updated article by id
+	// update article by id
 	public function update_article($id, $data){
 		$this->db->where('id', $id);
 		$this->db->update('blog', $data);
 		return true;
+	}
+	// update article status by slug
+	public function delete_article($id){
+		$this->db->query("UPDATE blog SET `status` = NOT `status` WHERE id=$id");
+		if($this->db->affected_rows() > 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
