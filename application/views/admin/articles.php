@@ -55,20 +55,20 @@ $(".remove").click(function(){
 		closeOnConfirm: false,
 		closeOnCancel: false
 	},
-	function(isConfirm) {
-		if (isConfirm) {
+	function(isConfirm){
+		if(isConfirm){
 			$.ajax({
 				url: '<?= base_url('admin/delete_article/') ?>'+id,
 				type: 'DELETE',
-				error: function() {
+				error: function(){
 					alert("Oops! Something went wrong!");
 				},
-				success: function(data) {
-				$("#"+id).remove();
-				swal("Deleted!", "You've delete the article.", "success");
-			}
-		});
-		}else {
+				success: function(data){
+					$("#"+id).remove();
+					swal("Deleted!", "You've delete the article.", "success");
+				}
+			});
+		}else{
 			swal("Cancelled", "You've cancelled the delete action. :)", "error");
 		}
 	});
