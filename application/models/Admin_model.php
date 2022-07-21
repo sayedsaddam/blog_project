@@ -12,7 +12,7 @@ class Admin_model extends CI_Model{
 			return false;
 		}
 	}
-	// list articles
+	// list articles > published articles
 	public function list_articles($limit, $offset){
 		$this->db->select('blog.id,
 									blog.title,
@@ -20,12 +20,31 @@ class Admin_model extends CI_Model{
 									blog.blog_description,
 									blog.status,
 									blog.added_by,
+									blog.updated_by,
 									blog.created_at,
 									blog.updated_at,
 									users.fullname');
 		$this->db->from('blog');
 		$this->db->join('users', 'blog.added_by = users.id', 'left');
 		$this->db->where('blog.status', 1);
+		$this->db->limit($limit, $offset);
+		return $this->db->get()->result();
+	}
+	// list articles > trashed / unpublished articles
+	public function trashed_articles($limit, $offset){
+		$this->db->select('blog.id,
+									blog.title,
+									blog.slug,
+									blog.blog_description,
+									blog.status,
+									blog.added_by,
+									blog.updated_by,
+									blog.created_at,
+									blog.updated_at,
+									users.fullname');
+		$this->db->from('blog');
+		$this->db->join('users', 'blog.added_by = users.id', 'left');
+		$this->db->where('blog.status', 0);
 		$this->db->limit($limit, $offset);
 		return $this->db->get()->result();
 	}
@@ -37,6 +56,7 @@ class Admin_model extends CI_Model{
 									blog.blog_description,
 									blog.status,
 									blog.added_by,
+									blog.updated_by,
 									blog.created_at,
 									blog.updated_at,
 									users.fullname');

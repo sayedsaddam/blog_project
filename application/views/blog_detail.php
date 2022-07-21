@@ -21,7 +21,10 @@
 		<div class="col-md-8">
 			<h1 class="font-weight-light mb-0"><?= $article->title; ?></h1>
 			<p class="text-muted mb-2">
-				<small>Posted by: <a href=""><?= $article->fullname; ?></a> on <?= date('D, M jS, Y', strtotime($article->created_at)); ?></small>
+				<small>Posted by: <a href=""><?= $article->fullname; ?>
+					</a> on <?= date('D, M jS, Y', strtotime($article->created_at)); ?>,
+					Last updated: <?= date('D, M jS, Y', strtotime($article->updated_at)); ?>
+				</small>
 			</p>
 			<p class="text-justify"><?= $article->blog_description; ?></p>
 		</div>

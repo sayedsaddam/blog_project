@@ -16,12 +16,20 @@ class Admin extends CI_Controller{
 		$data['articles'] = count($this->admin_model->list_articles($limit, $offset));
 		$this->load->view('components/template', $data);
 	}
-	// list articles
+	// list articles > published articles
 	public function articles($offset = null){
 		$limit = 10;
 		$data['title'] = 'Articles &raquo; WatchZone';
 		$data['body'] = 'admin/articles';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
+		$this->load->view('components/template', $data);
+	}
+	// list articles > trashed / unpublished articles
+	public function trashed_articles($offset = null){
+		$limit = 10;
+		$data['title'] = 'Trashed Articles &raquo; WatchZone';
+		$data['body'] = 'admin/trashed_articles';
+		$data['articles'] = $this->admin_model->trashed_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
 	// add article
@@ -71,8 +79,9 @@ class Admin extends CI_Controller{
 			'title' => $title,
 			'slug' => $slug,
 			'blog_description' => $content,
-			'added_by' => $this->session->userdata('id'),
+			'updated_by' => $this->session->userdata('id'),
 			'published_from' => $this->input->ip_address(),
+			'updated_at' => date('Y-m-d H:i:s'),
 		);
 		if($this->admin_model->update_article($id, $data)){
 			$this->session->set_flashdata('success', '<strong>Success!</strong> Article has been updated successfully!');

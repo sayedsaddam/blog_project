@@ -25,6 +25,11 @@ class Migration_Create_blog_table extends CI_Migration{
 				'constraint' => 11,
 				'unsigned' => TRUE
 			),
+			'updated_by' => array(
+				'type' => 'INT',
+				'constraint' => 11,
+				'unsigned' => TRUE
+			),
 			'status' => array(
 				'type' => 'tinyint',
 				'constraint' => 1

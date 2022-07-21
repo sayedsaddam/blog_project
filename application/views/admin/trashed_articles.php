@@ -1,8 +1,8 @@
 <div class="container">
-	<div class="row mb-4">
+	<div class="row mb-2">
 		<div class="col-md-6 col-sm-12">
-			<h1 class="font-weight-light">Articles List &raquo; 
-				<a href="<?= base_url('admin/trashed_articles'); ?>" class="btn btn-outline-danger btn-sm" title="view unpublished articles...">View Trash</a>
+		<h1 class="font-weight-light">Trashed Articles &raquo; 
+				<a href="<?= base_url('admin/articles'); ?>" class="btn btn-outline-secondary btn-sm">Published Articles</a>
 			</h1>
 		</div>
 		<div class="col-md-6 col-sm-12 text-sm-right">
@@ -12,6 +12,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
+			<small>You can restore/republish the articles by clicking the restore button!</small>
 			<table class="table table-condensed table-hover table-sm">
 				<caption>Total Number of Articles published, <?= count($articles); ?></caption>
 				<thead>
@@ -32,7 +33,7 @@
 						<td><?= $data->fullname; ?></td>
 						<td>
 							<a href="<?= base_url('admin/article/'.$data->slug); ?>" class="btn btn-primary btn-sm">edit</a>
-							<button type="submit" class="btn btn-danger btn-sm remove">delete</button>
+							<button type="submit" class="btn btn-danger btn-sm remove">restore</button>
 						</td>
 					</tr>
 					<?php endforeach; else: echo '<tr class="table-danger"><td colspan="5" align="center">No articles found.</td></tr>'; endif; ?>
@@ -47,12 +48,12 @@ $(".remove").click(function(){
 	var id = $(this).parents("tr").attr("id");
 	swal({
 		title: "Are you sure?",
-		text: "The article will be moved to trash.",
+		text: "The article will be restored and republished.",
 		type: "warning",
 		showCancelButton: true,
-		confirmButtonClass: "btn-danger",
-		confirmButtonText: "Yes, delete it!",
-		cancelButtonClass: "btn-primary",
+		confirmButtonClass: "btn-success",
+		confirmButtonText: "Yes, restore it!",
+		cancelButtonClass: "btn-danger",
 		cancelButtonText: "No, cancel!",
 		closeOnConfirm: false,
 		closeOnCancel: false
@@ -67,11 +68,11 @@ $(".remove").click(function(){
 				},
 				success: function(data){
 					$("#"+id).remove();
-					swal("Deleted!", "You've deleted the article.", "success");
+					swal("Restored!", "You've restored the article.", "success");
 				}
 			});
 		}else{
-			swal("Cancelled", "You've cancelled the delete action. :)", "error");
+			swal("Cancelled", "You've cancelled the restore action. :)", "error");
 		}
 	});
 });
