@@ -22,7 +22,7 @@
 					<div class="row mb-4">
 						<div class="col-md-5">
 							<a href="<?= base_url('blog/'.$data->slug); ?>">
-								<img src="<?= !empty($data->attachment) ? base_url('attachments/'.$data->attachment) : base_url('assets/images/no-image.jpg'); ?>" alt="<?= $data->slug; ?>" class="img-thumbnail rounded">
+								<img src="<?= !empty($data->attachment) ? base_url('attachments/'.$data->attachment) : base_url('assets/images/no-image.jpg'); ?>" alt="<?= $data->slug; ?>" class="img-thumbnail rounded-0">
 							</a>
 						</div>
 						<div class="col-md-7">

@@ -8,9 +8,9 @@ class Product extends CI_Controller{
 		$this->load->model('Product_model');
 	}
 	public function index(){
-		$products = array('Citizen', 'Sieko5', 'G-Shock', 'Rado', 'KWC', 'Casio');
-		foreach($products as $product){
-			echo '<h2>'.$product.'</h2>';
-		}
+		$data['title'] = 'Products &raquo; WatchZone';
+		$data['body'] = 'products';
+		// $data['products'] = $this->Product_model->list_products();
+		$this->load->view('components/template', $data);
 	}
 }
