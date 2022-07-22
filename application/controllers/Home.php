@@ -5,6 +5,7 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model(array('admin_model'));
+		$this->load->helper('paginate');
 	}
 	/**
 	 * Index Page for this controller.
@@ -28,7 +29,10 @@ class Home extends CI_Controller {
 	}
 	// blog page
 	public function blog($offset = null){
-		$limit = 2;
+		$limit = 10;
+		$url = 'home/blog';
+		$rowscount = $this->admin_model->total_articles();
+		paginate($url, $rowscount, $limit);
 		$data['title'] = 'Blog &raquo; WatchZone';
 		$data['body'] = 'blog';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);

@@ -27,7 +27,7 @@
 						Last updated: <?= date('D, M jS, Y', strtotime($article->updated_at)); ?>
 					</small>
 				</p>
-				<img src="<?= !empty($article->attachment) ? base_url('attachments/'.$article->attachment) : base_url('assets/images/no-image.jpg'); ?>" alt="<?= $article->slug; ?>" class="img-fluid mb-3" style="width: 100%; height: 50%;">
+				<img src="<?= !empty($article->attachment) ? base_url('attachments/'.$article->attachment) : base_url('assets/images/no-image.jpg'); ?>" alt="<?= $article->slug; ?>" class="img-fluid mb-3 rounded" style="width: 100%; height: 50%;">
 				<p class="text-justify"><?= $article->blog_description; ?></p>
 			</div>
 		</div>

@@ -12,6 +12,10 @@ class Admin_model extends CI_Model{
 			return false;
 		}
 	}
+	// count articles
+	public function total_articles(){
+		return $this->db->count_all('blog');
+	}
 	// list articles > published articles
 	public function list_articles($limit, $offset){
 		$this->db->select('blog.id,
