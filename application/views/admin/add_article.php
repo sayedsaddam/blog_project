@@ -22,7 +22,9 @@
 				<div class="custom-file mb-3">
 					<input type="file" name="attachment" class="custom-file-input" id="validatedCustomFile">
 					<label class="custom-file-label" for="validatedCustomFile">Feature image...</label>
-					<span class="text-danger">Image once set, can not be modified later.</span>
+					<?php if(empty($article)): ?>
+						<span class="text-danger">Image once set, can not be modified later.</span>
+					<?php endif; ?>
 				</div>
 				<div class="form-group mt-3">
 					<button type="submit" class="btn btn-primary">Save Changes</button>
