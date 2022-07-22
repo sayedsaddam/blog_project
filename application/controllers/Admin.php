@@ -6,6 +6,7 @@ class Admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model(array('admin_model'));
+		$this->load->helper('paginate');
 		if(!$this->session->userdata('username')){
 			redirect('');
 		}
@@ -21,7 +22,10 @@ class Admin extends CI_Controller{
 	}
 	// list articles > published articles
 	public function articles($offset = null){
-		$limit = 10;
+		$limit = 15;
+		$url = 'admin/articles';
+		$rowscount = $this->admin_model->total_articles();
+		paginate($url, $rowscount, $limit);
 		$data['title'] = 'Articles &raquo; WatchZone';
 		$data['body'] = 'admin/articles';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);

@@ -38,6 +38,7 @@
 					<?php endforeach; else: echo '<tr class="table-danger"><td colspan="5" align="center">No articles found.</td></tr>'; endif; ?>
 				</tbody>
 			</table>
+			<?= $this->pagination->create_links(); ?>
 		</div>
 	</div>
 </div>
