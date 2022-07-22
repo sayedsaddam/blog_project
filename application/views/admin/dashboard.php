@@ -18,23 +18,24 @@
 			<div class="row mt-4">
 				<div class="col-md-6">
 					<a href="<?= base_url('admin/articles'); ?>" class="btn btn-primary">List Articles</a>
-					<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-secondary">Write Article</a>
+					<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-secondary">Write an Article</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
-			<h2 class="font-weight-bold">Staff</h2>
+			<h2 class="font-weight-bold">Products</h2>
 			<div class="row">
 				<div class="col-md-6">
-					<h4 class="font-weight-light">Staff onboard</h4>
+					<h4 class="font-weight-light">Products in stock</h4>
 				</div>
 				<div class="col-md-6">
-					<h4 class="font-weight-light">9</h4>
+					<h4 class="font-weight-light">09</h4>
 				</div>
 			</div>
 			<div class="row mt-4">
 				<div class="col-md-6">
-					<a href="" class="btn btn-primary">Add Staff</a>
+					<a href="" class="btn btn-primary">List Product</a>
+					<a href="" class="btn btn-secondary">Add a Product</a>
 				</div>
 			</div>
 		</div>
