@@ -6,6 +6,9 @@ class Admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model(array('admin_model'));
+		if(!$this->session->userdata('username')){
+			redirect('');
+		}
 	}
 	// admin dashboard
 	public function index($offset = null){
@@ -42,6 +45,20 @@ class Admin extends CI_Controller{
 	}
 	// publish article
 	public function publish_article(){
+		$config = array(
+			'upload_path' => './attachments/',
+			'allowed_types' => 'jpg|png|jpeg|webp',
+			'overwrite' => true,
+			'encrypt_name' => false,
+			'file_name' => 'article_'.time()
+		);
+		$this->load->library('upload', $config);
+		if($this->upload->do_upload('attachment')){
+			$data = $this->upload->data();
+			$image = $data['file_name']; // get the attachment name
+		}else{		
+			echo $this->upload->display_errors(); // display errors if any
+		}
 		$title = $this->input->post('title');
 		$slug = url_title($title, 'dash', TRUE);
 		$content = trim($this->input->post('content'));
@@ -49,6 +66,7 @@ class Admin extends CI_Controller{
 			'title' => $title,
 			'slug' => $slug,
 			'blog_description' => $content,
+			'attachment' => $image,
 			'added_by' => $this->session->userdata('id'),
 			'published_from' => $this->input->ip_address(),
 		);

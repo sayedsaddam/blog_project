@@ -9,7 +9,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8">
-			<form action="<?= empty($article) ? base_url('admin/publish_article') : base_url('admin/update_article'); ?>" method="post">
+			<form action="<?= empty($article) ? base_url('admin/publish_article') : base_url('admin/update_article'); ?>" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="blog_id" value="<?= !empty($article) ? $article->id : ''; ?>">
 				<div class="form-group">
 					<label for="title">Article Title</label>
@@ -18,6 +18,10 @@
 				<div class="form-group">
 					<label for="content">Article Content</label>
 					<textarea name="content" class="form-control" rows="10" placeholder="Write your article here..."><?= !empty($article) ? $article->blog_description : ''; ?></textarea>
+				</div>
+				<div class="custom-file mb-3">
+					<input type="file" name="attachment" class="custom-file-input" id="validatedCustomFile">
+					<label class="custom-file-label" for="validatedCustomFile">Feature image...</label>
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Save Changes</button>

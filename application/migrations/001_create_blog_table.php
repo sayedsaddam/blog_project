@@ -20,6 +20,11 @@ class Migration_Create_blog_table extends CI_Migration{
 				'type' => 'TEXT',
 				'null' => TRUE
 			),
+			'attachment' => array(
+				'type' => 'VARCHAR',
+				'constraint' => 255,
+				'null' => TRUE
+			),
 			'added_by' => array(
 				'type' => 'INT',
 				'constraint' => 11,

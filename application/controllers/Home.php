@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 	}
 	// blog page
 	public function blog($offset = null){
-		$limit = 10;
+		$limit = 2;
 		$data['title'] = 'Blog &raquo; WatchZone';
 		$data['body'] = 'blog';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
