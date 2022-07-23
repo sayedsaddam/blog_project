@@ -41,7 +41,7 @@ class Admin extends CI_Controller{
 	}
 	// add article
 	public function add_article($offset = null){
-		$limit = 2;
+		$limit = 3;
 		$data['title'] = 'Add Article &raquo; WatchZone';
 		$data['body'] = 'admin/add_article';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
@@ -84,7 +84,7 @@ class Admin extends CI_Controller{
 	}
 	// get article for edit
 	public function article($slug, $offset = null){
-		$limit = 2;
+		$limit = 3;
 		$data['title'] = 'Article &raquo; WatchZone';
 		$data['body'] = 'admin/add_article';
 		$data['article'] = $this->admin_model->get_article($slug); // edit article

@@ -2,12 +2,12 @@
 	<div class="row mb-4">
 		<div class="col-md-6 col-sm-12">
 			<h1 class="font-weight-light">Articles List &raquo; 
-				<a href="<?= base_url('admin/trashed_articles'); ?>" class="btn btn-outline-danger btn-sm" title="view unpublished articles...">View Trash</a>
+				<a href="<?= base_url('admin/trashed_articles'); ?>" class="btn btn-outline-danger btn-sm rounded-0" title="view unpublished articles...">View Trash</a>
 			</h1>
 		</div>
 		<div class="col-md-6 col-sm-12 text-sm-right">
-			<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-primary">Add Article</a>
-			<a href="<?= base_url('admin'); ?>" class="btn btn-outline-primary">Dashboard</a>
+			<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-primary rounded-0">Add Article</a>
+			<a href="<?= base_url('admin'); ?>" class="btn btn-outline-primary rounded-0">Dashboard</a>
 		</div>
 	</div>
 	<div class="row">
@@ -31,8 +31,8 @@
 						<td><?= $data->slug; ?></td>
 						<td><?= $data->fullname; ?></td>
 						<td>
-							<a href="<?= base_url('admin/article/'.$data->slug); ?>" class="btn btn-primary btn-sm">edit</a>
-							<button type="submit" class="btn btn-danger btn-sm remove">delete</button>
+							<a href="<?= base_url('admin/article/'.$data->slug); ?>" class="btn btn-outline-primary btn-sm rounded-0">edit</a>
+							<button type="submit" class="btn btn-outline-danger btn-sm remove rounded-0">delete</button>
 						</td>
 					</tr>
 					<?php endforeach; else: echo '<tr class="table-danger"><td colspan="5" align="center">No articles found.</td></tr>'; endif; ?>
@@ -51,9 +51,9 @@ $(".remove").click(function(){
 		text: "The article will be moved to trash.",
 		type: "warning",
 		showCancelButton: true,
-		confirmButtonClass: "btn-danger",
+		confirmButtonClass: "btn-danger rounded-0",
 		confirmButtonText: "Yes, delete it!",
-		cancelButtonClass: "btn-primary",
+		cancelButtonClass: "btn-primary rounded-0",
 		cancelButtonText: "No, cancel!",
 		closeOnConfirm: false,
 		closeOnCancel: false

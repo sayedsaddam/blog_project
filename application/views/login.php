@@ -13,7 +13,7 @@
 	<div class="container pt-5 mt-5">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
-				<div class="card border-primary">
+				<div class="card border-primary rounded-0">
 					<div class="card-body">
 						<h1 class="text-center text-uppercase"><span class="font-weight-bold text-primary">Login</span><br> WatchZone</h1>
 						<p class="text-center">You are not authorized to access this page at the moment. <br>Try logging in to add or edit products.</p>
@@ -21,13 +21,13 @@
 							<div class="col-md-6 offset-md-3 text-center">
 								<form action="<?= base_url('login/signin'); ?>" method="post">
 									<div class="form-group">
-										<input type="text" name="username" id="username" class="form-control" placeholder="Username">
+										<input type="text" name="username" id="username" class="form-control rounded-0" placeholder="Username" required>
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+										<input type="password" name="password" id="password" class="form-control rounded-0" placeholder="Password" required>
 									</div>
 									<div class="form-group">
-										<button type="submit" class="btn btn-primary btn-block">Login</button>
+										<button type="submit" class="btn btn-primary btn-block rounded-0">Login</button>
 									</div>
 								</form>
 								<?php if($failed = $this->session->flashdata('failed')): ?>

@@ -17,8 +17,8 @@
 			</div>
 			<div class="row mt-4">
 				<div class="col-md-6">
-					<a href="<?= base_url('admin/articles'); ?>" class="btn btn-primary">List Articles</a>
-					<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-secondary">Write an Article</a>
+					<a href="<?= base_url('admin/articles'); ?>" class="btn btn-primary rounded-0">List Articles</a>
+					<a href="<?= base_url('admin/add_article'); ?>" class="btn btn-secondary rounded-0">Write an Article</a>
 				</div>
 			</div>
 		</div>
@@ -34,8 +34,8 @@
 			</div>
 			<div class="row mt-4">
 				<div class="col-md-6">
-					<a href="" class="btn btn-primary">List Product</a>
-					<a href="" class="btn btn-secondary">Add a Product</a>
+					<a href="" class="btn btn-primary rounded-0">List Product</a>
+					<a href="" class="btn btn-secondary rounded-0">Add a Product</a>
 				</div>
 			</div>
 		</div>
