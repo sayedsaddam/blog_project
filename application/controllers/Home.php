@@ -73,4 +73,8 @@ class Home extends CI_Controller {
 		$data['body'] = 'losers';
 		$this->load->view('components/template', $data);
 	}
+	// alpinejs
+	public function alpinejs(){
+		$this->load->view('alpinejs');
+	}
 }
