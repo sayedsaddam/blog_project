@@ -30,7 +30,7 @@ class Login extends CI_Controller{
 			redirect('admin');
 		}else{
 			$this->session->set_flashdata('failed', '<strong>Sorry!</strong> Username or password incorrect, please try again!');
-			redirect('login/index');
+			$this->index();
 		}
 	}
 	// terminate session and logout
