@@ -26,7 +26,7 @@
 										<div class="input-group mb-2">
 											<input type="password" name="password" class="form-control rounded-0" id="showPassword" placeholder="Password" required>
 											<div class="input-group-prepend" id="showPassword" onclick="showPassword()" title="Show Password">
-												<div class="input-group-text">&twoheadrightarrow;</div>
+												<div class="input-group-text">&#128065;</div>
 											</div>
 										</div>
 										<div class="form-group">
