@@ -3,9 +3,9 @@
 		<div class="col-md-12">
 			<form action="<?= base_url('home/search_products'); ?>" method="get">
 				<div class="input-group mb-3">
-					<input type="text" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2" name="search" required>
+					<input type="text" class="form-control rounded-0" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2" name="search" required>
 					<div class="input-group-append">
-						<button class="btn btn-secondary" type="submit">Search</button>
+						<button class="btn btn-secondary rounded-0" type="submit">Search</button>
 					</div>
 				</div>
 			</form>
