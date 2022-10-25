@@ -8,6 +8,11 @@
 	<script src="<?= base_url('assets/js/jquery.min.js'); ?>"></script>
 	<script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
 	<title>Login | WatchZone</title>
+	<style>
+		.showHide{
+			cursor: pointer;
+		}
+	</style>
 </head>
 	<body class="pt-4 mt-4">
 		<div class="container pt-5 mt-5">
@@ -26,7 +31,7 @@
 										<div class="input-group mb-2">
 											<input type="password" name="password" class="form-control rounded-0" id="showPassword" placeholder="Password" required>
 											<div class="input-group-prepend" id="showPassword" onclick="showPassword()" title="Show Password">
-												<div class="input-group-text">&#128065;</div>
+												<div class="input-group-text showHide font-weight-bold text-muted">Show</div>
 											</div>
 										</div>
 										<div class="form-group">
@@ -51,8 +56,10 @@
 			let passField = document.getElementById("showPassword");
 			if(passField.type === "password"){
 				passField.type = "text";
+				$('.showHide').html('Hide');
 			}else{
 				passField.type = "password";
+				$('.showHide').html('Show');
 			}
 		}
 		// validate input
