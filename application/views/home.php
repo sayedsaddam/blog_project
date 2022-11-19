@@ -52,7 +52,7 @@
 	</div>
 	<!-- proucts list... -->
 	<div class="row mt-3 mb-3">
-		<?php for($i = 0; $i < 9; $i++): ?>
+		<?php for($i = 0; $i < 8; $i++): ?>
 			<div class="col-md-4 col-lg-3 mb-4">
 				<div class="card rounded-0">
 					<div class="card-body">
