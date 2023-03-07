@@ -24,7 +24,7 @@ class StripePaymentController extends CI_Controller {
                 "amount" => 100 * 120,
                 "currency" => "inr",
                 "source" => $this->input->post('stripeToken'),
-                "description" => "Test payment via Stripe in PKR." 
+                "description" => "Test payment via Stripe in INR." 
         ]);
             
         $this->session->set_flashdata('success', '<strong>Sucess! </strong>Payment has been successful.');
