@@ -104,7 +104,7 @@
 	</div>
 	<hr>
 	<div class="row">
-		<div class="col-md-10 offset-md-1">
+		<div class="col-md-12">
 			<h1 class="font-weight-bold">New Arrivals <small class="text-muted font-weight-light">Stay up-to-date about new products.</small></h1>
 			<form action="" method="post">
 				<div class="input-group mb-3">

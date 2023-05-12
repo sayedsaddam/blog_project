@@ -57,3 +57,6 @@ $route['losers'] = 'home/losers';
 $route['products'] = 'product/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['make-stripe-payment'] = 'StripePaymentController';
+$route['handleStripePayment']['post'] = 'StripePaymentController/handlePayment';

@@ -40,7 +40,7 @@ class Home extends CI_Controller {
 	}
 	// search articles
 	public function search_blog(){
-		$search = $this->input->get('search');
+		$search = trim($this->input->get('search'));
 		$data['title'] = 'Search Results &raquo; WatchZone';
 		$data['body'] = 'blog';
 		$data['results'] = $this->admin_model->search_articles($search);
