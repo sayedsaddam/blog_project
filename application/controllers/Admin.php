@@ -50,7 +50,7 @@ class Admin extends CI_Controller{
 	// publish article
 	public function publish_article(){
 		$config = array(
-			'upload_path' => './attachments/',
+			'upload_path' => './attachments/articles/',
 			'allowed_types' => 'jpg|png|jpeg|webp',
 			'overwrite' => true,
 			'encrypt_name' => false,

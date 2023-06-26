@@ -13,4 +13,12 @@ class Product_model extends CI_Model{
 			return true;
 		return false;
 	}
+	// get products
+	public function get_products($limit, $offset){
+		$this->db->select('id, product_name, product_description, product_code, product_qty, price, image, supplier, status, created_at, updated_at');
+		$this->db->from('products');
+		$this->db->limit($limit, $offset);
+		$this->db->order_by('id', 'DESC');
+		return $this->db->get()->result();
+	}
 }
