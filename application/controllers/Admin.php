@@ -27,7 +27,7 @@ class Admin extends CI_Controller{
 		$rowscount = $this->admin_model->total_articles();
 		paginate($url, $rowscount, $limit);
 		$data['title'] = 'Articles &raquo; WatchZone';
-		$data['body'] = 'admin/articles';
+		$data['body'] = 'admin/articles/articles';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
@@ -35,7 +35,7 @@ class Admin extends CI_Controller{
 	public function trashed_articles($offset = null){
 		$limit = 10;
 		$data['title'] = 'Trashed Articles &raquo; WatchZone';
-		$data['body'] = 'admin/trashed_articles';
+		$data['body'] = 'admin/articles/trashed_articles';
 		$data['articles'] = $this->admin_model->trashed_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
@@ -43,7 +43,7 @@ class Admin extends CI_Controller{
 	public function add_article($offset = null){
 		$limit = 3;
 		$data['title'] = 'Add Article &raquo; WatchZone';
-		$data['body'] = 'admin/add_article';
+		$data['body'] = 'admin/articles/add_article';
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
@@ -86,7 +86,7 @@ class Admin extends CI_Controller{
 	public function article($slug, $offset = null){
 		$limit = 3;
 		$data['title'] = 'Article &raquo; WatchZone';
-		$data['body'] = 'admin/add_article';
+		$data['body'] = 'admin/articles/add_article';
 		$data['article'] = $this->admin_model->get_article($slug); // edit article
 		$data['articles'] = $this->admin_model->list_articles($limit, $offset);
 		$this->load->view('components/template', $data);

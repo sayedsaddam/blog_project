@@ -13,4 +13,10 @@ class Product extends CI_Controller{
 		// $data['products'] = $this->Product_model->list_products();
 		$this->load->view('components/template', $data);
 	}
+	// create product > go to the form
+	public function create_product(){
+		$data['title'] = 'Add Product &raquo; WatchZone';
+		$data['body'] = 'admin/products/create-product';
+		$this->load->view('components/template', $data);
+	}
 }

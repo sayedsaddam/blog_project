@@ -35,7 +35,7 @@
 			<div class="row mt-4">
 				<div class="col-md-6">
 					<a href="" class="btn btn-primary rounded-0">List Product</a>
-					<a href="" class="btn btn-secondary rounded-0">Add a Product</a>
+					<a href="<?= base_url('product/create_product'); ?>" class="btn btn-secondary rounded-0">Add a Product</a>
 				</div>
 			</div>
 		</div>
