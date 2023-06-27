@@ -56,7 +56,7 @@
 			<div class="col-md-4 col-lg-3 mb-4">
 				<div class="card rounded-0">
 					<div class="card-body">
-						<img src="<?= base_url('attachments/products/'.$data->image); ?>" alt="<?= $data->product_name; ?>" class="card-img-top shadow-lg" style="height: 170px;">
+						<img src="<?= base_url('attachments/products/'.$data->image); ?>" alt="<?= $data->product_name; ?>" class="card-img-top shadow-lg" style="height: 170px; background-size: cover;">
 						<h5 class="card-title mt-3 mb-0"><?= $data->product_name; ?></h5>
 						<p class="font-weight-light"><?= $data->product_description; ?></p>
 						<a href="<?= base_url('home/product_detail/'); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a> &raquo; Rs. <?= number_format($data->price, 2); ?>
