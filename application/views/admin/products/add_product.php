@@ -58,7 +58,7 @@
 			<?php if(!empty($product)): ?>
 				<figure class="figure">
 					<img src="<?= base_url('attachments/products/'.$product->image); ?>" class="figure-img img-fluid rounded" alt="<?= $product->product_name; ?>">
-					<figcaption class="figure-caption text-right"><?= $product->product_name.', '.$product->product_code; ?></figcaption>
+					<figcaption class="figure-caption"><?= $product->product_name.', '.$product->product_code; ?></figcaption>
 				</figure>
 			<?php endif; ?>
 		</div>
