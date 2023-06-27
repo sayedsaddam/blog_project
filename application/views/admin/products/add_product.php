@@ -9,31 +9,32 @@
 			<h1 class="font-weight-light"><?= !empty($product) ? 'Update Product' : 'Add Product'; ?> &raquo; <a href="javascript:history.go(-1)" class="btn btn-outline-primary rounded-0">Dashboard</a></h1>
 		</div>
 		<div class="col-md-6">
-			<h1 class="font-weight-light">Recently Added</h1>
+			<h1 class="font-weight-light"><?= $product->product_name; ?></h1>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<form action="<?= base_url('product/store_product'); ?>" method="post" enctype="multipart/form-data">
+			<form action="<?= base_url(empty($product) ? 'product/store_product' : 'product/update_product'); ?>" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="id" value="<?= !empty($product) ? $product->id : ''; ?>">
 				<div class="form-group">
 					<label for="name">Product Name</label>
-					<input type="text" name="name" class="form-control rounded-0" placeholder="Product Name" required>
+					<input type="text" name="name" class="form-control rounded-0" placeholder="Product Name" required value="<?= !empty($product) ? $product->product_name : ''; ?>">
 				</div>
 				<div class="form-group">
 					<label for="description">Product Description</label>
-					<textarea type="text" name="description" class="form-control rounded-0" placeholder="Description" required></textarea>
+					<textarea type="text" name="description" class="form-control rounded-0" placeholder="Description" required><?= !empty($product) ? $product->product_description : ''; ?></textarea>
 				</div>
 				<div class="form-group">
 					<label for="Code">Product Code</label>
-					<input type="text" name="code" class="form-control rounded-0" placeholder="Code" required>
+					<input type="text" name="code" class="form-control rounded-0" placeholder="Code" required value="<?= !empty($product) ? $product->product_code : ''; ?>">
 				</div>
 				<div class="form-group">
 					<label for="qty">Product Quantity</label>
-					<input type="number" name="quantity" class="form-control rounded-0" placeholder="Quantity" required>
+					<input type="number" name="quantity" class="form-control rounded-0" placeholder="Quantity" required value="<?= !empty($product) ? $product->product_qty : ''; ?>">
 				</div>
 				<div class="form-group">
 					<label for="price">Product Price</label>
-					<input type="number" name="price" class="form-control rounded-0" placeholder="Price" required>
+					<input type="number" name="price" class="form-control rounded-0" placeholder="Price" required value="<?= !empty($product) ? $product->price : ''; ?>">
 				</div>
 				<div class="custom-file mb-3">
 					<input type="file" name="image" class="custom-file-input" id="validatedCustomFile">
@@ -44,42 +45,22 @@
 				</div>
 				<div class="form-group">
 					<label for="name">Product Supplier</label>
-					<input type="text" name="supplier" class="form-control rounded-0" placeholder="Supplier" required>
+					<input type="text" name="supplier" class="form-control rounded-0" placeholder="Supplier" required value="<?= !empty($product) ? $product->supplier : ''; ?>">
 				</div>
-				<button type="submit" class="btn btn-primary rounded-0">Store Product</button>
+				<button type="submit" class="btn btn-primary rounded-0">
+					<?= empty($product) ? 'Store Product' : 'Update Product'; ?>
+				</button>
 				<button type="reset" class="btn btn-warning rounded-0">Reset</button>
 			</form>
 			</form>
 		</div>
 		<div class="col-md-6">
-			<?php if(!empty($products)): foreach($products as $product): ?>
-				<div class="row mb-3">
-					<div class="col-md-4">
-						<img src="<?= base_url('attachments/products/'.$product->image); ?>" alt="<?= $product->product_name; ?>" class="img-thumbnail">
-					</div>
-					<div class="col-md-8">
-						<p class="mb-0 font-weight-bold">
-							<?= $product->product_name; ?>,
-							<small class="text-muted"><?= $product->product_code; ?></small>
-						</p>
-						<p class="mb-0">
-							<?= $product->product_description; ?>
-						</p>
-						<p class="mb-0">
-							<?= 'PKR '.$product->price; ?>
-						</p>
-						<p class="mb-0">
-							<?= 'Qty: '.$product->product_qty; ?>
-						</p>
-						<p class="mb-0">
-							<?= $product->supplier; ?>
-						</p>
-						<span class="badge <?= $product->status == 1 ? 'badge-success' : 'badge-danger'; ?>">
-							<?= $product->status == 1 ? 'Active' : 'Inactive'; ?>
-						</span>
-					</div>
-				</div>
-			<?php endforeach; endif; ?>
+			<?php if(!empty($product)): ?>
+				<figure class="figure">
+					<img src="<?= base_url('attachments/products/'.$product->image); ?>" class="figure-img img-fluid rounded" alt="<?= $product->product_name; ?>">
+					<figcaption class="figure-caption text-right"><?= $product->product_name.', '.$product->product_code; ?></figcaption>
+				</figure>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

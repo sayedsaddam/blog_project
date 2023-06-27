@@ -6,6 +6,7 @@ class Product extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('product_model');
+		$this->load->helper('paginate');
 	}
 	public function index(){
 		$data['title'] = 'Products &raquo; WatchZone';
@@ -53,6 +54,64 @@ class Product extends CI_Controller{
 		}else{
 			$this->session->set_flashdata('failed', '<strong>Failed! </strong>Prduct was not added, please try again.');
 			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+	// list products
+	public function products($offset = null){
+		$limit = 15;
+		$url = 'product/products';
+		$rowscount = $this->product_model->total_products();
+		paginate($url, $rowscount, $limit);
+		$data['title'] = 'List Products &raquo; WatchZone';
+		$data['body'] = 'admin/products/products';
+		$data['products'] = $this->product_model->get_products($limit, $offset);
+		$this->load->view('components/template', $data);
+	}
+	// trashed products
+	public function trashed_products($offset = null){
+		$limit = 15;
+		$url = 'product/trashed_products';
+		$rowscount = $this->product_model->total_products();
+		paginate($url, $rowscount, $limit);
+		$data['title'] = 'List Products &raquo; WatchZone';
+		$data['body'] = 'admin/products/trashed_products';
+		$data['products'] = $this->product_model->trashed_products($limit, $offset);
+		$this->load->view('components/template', $data);
+	}
+	// get product for edit
+	public function product($id){
+		$data['title'] = 'Product &raquo; WatchZone';
+		$data['body'] = 'admin/products/add_product';
+		$data['product'] = $this->product_model->get_product($id);
+		$this->load->view('components/template', $data);
+	}
+	// update product info
+	public function update_product(){
+		$id = $this->input->post('id');
+		$data = array(
+			'product_name' => $this->input->post('name'),
+			'product_description' => $this->input->post('description'),
+			'product_code' => $this->input->post('code'),
+			'product_qty' => $this->input->post('quantity'),
+			'price' => $this->input->post('price'),
+			'supplier' => $this->input->post('supplier'),
+			'updated_at' => date('Y:m:d H:i:s')
+ 		);
+		 if($this->product_model->update_product($id, $data)){
+			$this->session->set_flashdata('success', '<strong>Success! </strong>Product has been updated successfully.');
+			redirect($_SERVER['HTTP_REFERER']);
+		}else{
+			$this->session->set_flashdata('failed', '<strong>Failed! </strong>Prduct was not updated, please try again.');
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+	// delete product
+	public function delete_product($id){
+		if($this->product_model->delete_product($id)){
+			// sweet alert will display the message, not need for bootstrap alert
+			redirect('product/index');
+		}else{
+			redirect('product/index');
 		}
 	}
 }
