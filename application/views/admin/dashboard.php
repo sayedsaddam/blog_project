@@ -12,7 +12,7 @@
 					<h4 class="font-weight-light">Articles Published</h4>
 				</div>
 				<div class="col-md-6">
-					<h4 class="font-weight-light"><?= $articles; ?></h4>
+					<h4 class="font-weight-light"><?= number_format($articles); ?></h4>
 				</div>
 			</div>
 			<div class="row mt-4">
@@ -29,7 +29,7 @@
 					<h4 class="font-weight-light">Products in stock</h4>
 				</div>
 				<div class="col-md-6">
-					<h4 class="font-weight-light">09</h4>
+					<h4 class="font-weight-light"><?= number_format($products); ?></h4>
 				</div>
 			</div>
 			<div class="row mt-4">

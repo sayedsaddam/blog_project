@@ -5,7 +5,7 @@
 class Admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		$this->load->model(array('admin_model'));
+		$this->load->model(array('admin_model', 'product_model'));
 		$this->load->helper('paginate');
 		if(!$this->session->userdata('username')){
 			redirect('');
@@ -17,7 +17,8 @@ class Admin extends CI_Controller{
 		// echo $this->input->ip_address();
 		$data['title'] = 'Dashboard &raquo; WatchZone';
 		$data['body'] = 'admin/dashboard';
-		$data['articles'] = count($this->admin_model->list_articles($limit, $offset));
+		$data['articles'] = $this->admin_model->total_articles();
+		$data['products'] = $this->product_model->total_products();
 		$this->load->view('components/template', $data);
 	}
 	// list articles > published articles
