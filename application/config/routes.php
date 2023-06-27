@@ -54,7 +54,7 @@ $route['blog'] = 'home/blog';
 $route['blog/(:any)'] = 'home/blog_detail/$1';
 $route['about'] = 'home/about';
 $route['losers'] = 'home/losers';
-$route['products'] = 'product/index';
+$route['products'] = 'home/products';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 

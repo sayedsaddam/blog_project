@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model(array('admin_model'));
+		$this->load->model(array('admin_model', 'product_model'));
 		$this->load->helper('paginate');
 	}
 	/**
@@ -22,9 +22,11 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index(){
+	public function index($offset = null){
+		$limit = 8;
 		$data['title'] = 'Home &raquo; WatchZone';
 		$data['body'] = 'home';
+		$data['products'] = $this->product_model->get_products($limit, $offset);
 		$this->load->view('components/template', $data);
 	}
 	// blog page
@@ -61,10 +63,22 @@ class Home extends CI_Controller {
 		$data['body'] = 'about';
 		$this->load->view('components/template', $data);
 	}
+	// products
+	public function products($offset = null){
+		$limit = 12;
+		$url = 'home/products';
+		$rowscount = $this->product_model->total_products();
+		paginate($url, $rowscount, $limit);
+		$data['title'] = 'Products &raquo; WatchZone';
+		$data['body'] = 'products';
+		$data['products'] = $this->product_model->get_products($limit, $offset);
+		$this->load->view('components/template', $data);
+	}
 	// view product page
-	public function product_detail(){ // product id will be passed as parameter
+	public function product_detail($id){ // product id will be passed as parameter
 		$data['title'] = 'Product Detail &raquo; WatchZone';
 		$data['body'] = 'product_detail';
+		$data['product'] = $this->product_model->get_product($id);
 		$this->load->view('components/template', $data);
 	}
 	// categories > loser.com

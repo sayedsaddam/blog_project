@@ -25,15 +25,15 @@
 		</div>
 	</div>
 	<div class="row">
-		<?php for($i = 1; $i <= 9; $i++): ?>
+		<?php if(!empty($products)): foreach($products as $data): ?>
 			<div class="col-md-4 mb-3">
 				<div class="card rounded-0">
 					<div class="card-body">
-						<img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22843%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20843%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17f6fd83be4%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A42pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17f6fd83be4%22%3E%3Crect%20width%3D%22843%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22314.06640625%22%20y%3D%22144.35%22%3E843x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="best selling" class="img-fluid">
-						<h5 class="card-title mt-3 mb-0">G-Shock, 29029432 - <span class="text-secondary">$100</span></h5>
-						<p class="font-weight-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum mollitia distinctio fuga ut repudiandae sit unde nulla earum doloribus dolor repellat explicabo deleniti id facilis similique animi, quidem culpa cum.</p>
-						<a href="<?= base_url('home/product_detail/'); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a>
-						<a href="<?= base_url('home/product_detail'); ?>" class="btn btn-outline-info btn-sm mb-2 rounded-0">More info &raquo;</a>
+						<img src="<?= base_url('attachments/products/'.$data->image); ?>" alt="<?= $data->product_name; ?>" class="card-img-top" height="200">
+						<h5 class="card-title mt-3 mb-0"><?= $data->product_name; ?> - <span class="text-secondary"><?= 'Rs. '. number_format($data->price, 2); ?></span></h5>
+						<p class="font-weight-light"><?= $data->product_description; ?></p>
+						<a href="<?= base_url('home/product_detail/'.$data->id); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a>
+						<a href="<?= base_url('home/product_detail/'.$data->id); ?>" class="btn btn-outline-info btn-sm mb-2 rounded-0">More info &raquo;</a>
 						<br>
 						<?php for($k = 1; $k <= 5; $k++): ?>
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16">
@@ -43,6 +43,11 @@
 					</div>
 				</div>
 			</div>
-		<?php endfor; ?>
+		<?php endforeach; endif; ?>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<?= $this->pagination->create_links(); ?>
+		</div>
 	</div>
 </div>
