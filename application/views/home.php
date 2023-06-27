@@ -76,6 +76,7 @@
 			<a href="<?= base_url('products'); ?>" class="btn btn-primary rounded-0">View More &raquo;</a>
 		</div>
 	</div>
+	<hr>
 	<div class="row mt-4 mb-3">
 		<div class="col-md-12">
 			<h1 class="font-weight-bold">Best Selling</h1>
