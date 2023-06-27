@@ -22,7 +22,7 @@
 			<div class="col-md-7 col-sm-12">
 				<h3>A little more detail of the product</h3>
 				<p><?= $product->product_description; ?></p>
-				<form action="" method="POST" role="form">
+				<form action="<?= base_url('product/place_order'); ?>" method="POST" role="form">
 					<input type="hidden" name="product_id" value="<?= $product->id; ?>">
 					<legend>Purchase this product</legend>
 					<div class="form-group">
