@@ -9,7 +9,7 @@
 			<h1 class="font-weight-light"><?= !empty($product) ? 'Update Product' : 'Add Product'; ?> &raquo; <a href="javascript:history.go(-1)" class="btn btn-outline-primary rounded-0">Dashboard</a></h1>
 		</div>
 		<div class="col-md-6">
-			<h1 class="font-weight-light"><?= $product->product_name; ?></h1>
+			<h1 class="font-weight-light"><?= !empty($product) ? $product->product_name : 'Recently Added'; ?></h1>
 		</div>
 	</div>
 	<div class="row">
@@ -60,6 +60,23 @@
 					<img src="<?= base_url('attachments/products/'.$product->image); ?>" class="figure-img img-fluid rounded" alt="<?= $product->product_name; ?>">
 					<figcaption class="figure-caption"><?= $product->product_name.', '.$product->product_code; ?></figcaption>
 				</figure>
+			<?php else: ?>
+				<?php foreach($products as $prod): ?>
+					<div class="row mb-3">
+						<div class="col-md-4">
+							<img src="<?= base_url('attachments/products/'.$prod->image); ?>" class="img-fluid img-thumbnail rounded" alt="<?= $prod->product_name; ?>">
+						</div>
+						<div class="col-md-8">
+							<p class="font-weight-bold"><?= $prod->product_name.' &raquo; '; ?><span class="font-weight-normal text-secondary"><?= $prod->product_code ?></span></p>
+							<p class="mb-0"><?= $prod->product_description; ?></p>
+							<p class="mb-0"><?= 'PKR '. number_format($prod->price, 2); ?></p>
+							<p class="mb-0"><?= 'Qty: '. number_format($prod->product_qty); ?></p>
+							<span class="badge badge-info">
+								<?= 'Added on: '. date('M d, Y', strtotime($prod->created_at)).' at '. date('h:i:s a', strtotime($prod->created_at)); ?>
+							</span>
+						</div>
+					</div>
+				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
 	</div>
