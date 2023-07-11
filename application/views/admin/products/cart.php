@@ -30,7 +30,7 @@
 							<img src="<?= base_url('attachments/products/'.$data['photo']); ?>" alt="<?= $data['name']; ?>" class="img-thumbnail" width="50">
 						</th>
 						<td>
-							<a href="<?= base_url('cart/remove/'.$data['id']); ?>" class="btn btn-outline-danger btn-sm remove rounded-0">remove</a>
+							<a href="<?= base_url('cart/remove/'.$data['id']); ?>" class="btn btn-outline-danger btn-sm remove rounded-0" onclick="javascript:return confirm('Are you sure to remove this item from the cart?');">remove</a>
 						</td>
 					</tr>
 					<?php endforeach; ?>

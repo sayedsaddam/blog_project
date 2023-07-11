@@ -8,6 +8,9 @@ class Cart extends CI_Controller{
 		$this->load->model('product_model');
 	}
 	public function index(){
+		if(!$this->session->has_userdata('cart')){
+			redirect('products');
+		}
 		$data['items'] = array_values(unserialize($this->session->userdata('cart')));
 		$data['total'] = $this->total();
 		$data['title'] = 'Cart &raquo; WatchZone';
