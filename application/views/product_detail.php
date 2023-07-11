@@ -13,7 +13,7 @@
 						<p class="mb-0">Rs. <?= number_format( $product->price, 2); ?></p>
 						<p class="mb-0">Stock: <?= number_format($product->product_qty); ?></p>
 						<p>Suppler: <?= $product->supplier; ?></p>
-						<button class="btn btn-outline-secondary btn-block rounded-0">Add to Wishlist</button>
+						<a href="<?= base_url('cart/buy/'.$product->id); ?>" class="btn btn-outline-secondary btn-block rounded-0">Add to Cart</a>
 						<a href="#" class="btn btn-outline-secondary btn-block rounded-0">Add a Review</a>
 						<a href="javascript:history.go(-1)" class="btn btn-outline-secondary btn-block rounded-0">Back home</a>
 					</div>

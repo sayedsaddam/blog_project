@@ -81,6 +81,14 @@ class Home extends CI_Controller {
 		$data['product'] = $this->product_model->get_product($id);
 		$this->load->view('components/template', $data);
 	}
+	// search produts > autocomplete
+	public function search(){
+		$keyword = $this->input->get('keyword');
+		$data['title'] = 'List Products &raquo; WatchZone';
+		$data['body'] = 'products';
+		$data['result'] = $this->product_model->search_products($keyword);
+		$this->load->view('components/template', $data);
+	}
 	// categories > loser.com
 	public function losers(){
 		$data['title'] = 'Losers &raquo; WatchZone';

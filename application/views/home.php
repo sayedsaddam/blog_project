@@ -56,10 +56,12 @@
 			<div class="col-md-4 col-lg-3 mb-4">
 				<div class="card rounded-0">
 					<div class="card-body">
-						<img src="<?= base_url('attachments/products/'.$data->image); ?>" alt="<?= $data->product_name; ?>" class="card-img-top shadow-lg" style="height: 170px; background-size: cover;">
+						<a href="<?= base_url('home/product_detail/'.$data->id); ?>">
+							<img src="<?= base_url('attachments/products/'.$data->image); ?>" alt="<?= $data->product_name; ?>" class="card-img-top shadow-lg" style="height: 170px; background-size: cover;">
+						</a>
 						<h5 class="card-title mt-3 mb-0"><?= $data->product_name; ?></h5>
 						<p class="font-weight-light"><?= $data->product_description; ?></p>
-						<a href="<?= base_url('home/product_detail/'); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a> &raquo; Rs. <?= number_format($data->price, 2); ?>
+						<a href="<?= base_url('home/product_detail/'.$data->id); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a> &raquo; Rs. <?= number_format($data->price, 2); ?>
 						<br>
 						<?php for($j = 1; $j <= 5; $j++): ?>
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill text-warning" viewBox="0 0 16 16">
