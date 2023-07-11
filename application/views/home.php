@@ -60,6 +60,8 @@
 							<img src="<?= base_url('attachments/products/'.$data->image); ?>" alt="<?= $data->product_name; ?>" class="card-img-top shadow-lg" style="height: 170px; background-size: cover;">
 						</a>
 						<h5 class="card-title mt-3 mb-0"><?= $data->product_name; ?></h5>
+						<p class="mb-0"><?= $data->product_code; ?></p>
+						<p class="mb-0">Stock: <?= $data->product_qty; ?></p>
 						<p class="font-weight-light"><?= $data->product_description; ?></p>
 						<a href="<?= base_url('home/product_detail/'.$data->id); ?>" class="btn btn-primary btn-sm mb-2 rounded-0">Buy Now</a> &raquo; Rs. <?= number_format($data->price, 2); ?>
 						<br>
